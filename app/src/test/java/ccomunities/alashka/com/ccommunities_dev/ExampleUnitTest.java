@@ -1,4 +1,4 @@
-package ccomunities.alashka.com.christiancommunities;
+package ccomunities.alashka.com.ccommunities_dev;
 
 import org.junit.Test;
 
