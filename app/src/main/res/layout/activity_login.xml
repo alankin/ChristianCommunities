@@ -8,16 +8,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ccomunities.alashka.com.ccommunities_dev.LoginActivity">
 
     <ImageView
         android:id="@+id/image_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:src="@mipmap/image_login"
+        android:src="@mipmap/icon_login"
         android:contentDescription="@string/content_image_login"/>
 
     <LinearLayout
@@ -61,14 +62,14 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="315dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginBottom="25dp"
             android:onClick="login"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorTextIcons"
+            android:background="@drawable/b_button"
+            android:textColor="@color/colorPrimaryText"
             android:text="@string/login_button"/>
     </LinearLayout>
 

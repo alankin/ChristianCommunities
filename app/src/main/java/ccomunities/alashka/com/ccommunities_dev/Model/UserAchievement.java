@@ -42,4 +42,8 @@ public class UserAchievement extends SugarRecord {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public UserAchievement(Achievement achievement) {
+        this.achievement = achievement;
+    }
 }

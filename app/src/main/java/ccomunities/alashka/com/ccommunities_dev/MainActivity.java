@@ -7,18 +7,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ccomunities.alashka.com.ccommunities_dev.Model.Community;
 import ccomunities.alashka.com.ccommunities_dev.Fragment.PublicationFragment;
-import ccomunities.alashka.com.ccommunities_dev.Fragment.UserFragment;
+import ccomunities.alashka.com.ccommunities_dev.Fragment.AchievementFragment;
 import ccomunities.alashka.com.ccommunities_dev.Adapter.ViewPagerAdapter;
 
 
@@ -74,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PublicationFragment(), "PUBLICATION");
-        adapter.addFragment(new UserFragment(), "USER");
+        adapter.addFragment(new AchievementFragment(), "ACHIEVEMENT");
 
         viewPager.setAdapter(adapter);
     }

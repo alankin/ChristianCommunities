@@ -21,7 +21,6 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     private List<Publication> publications;
 
     public PublicationAdapter(Context context) {
-        //super(context, R.layout.post_item_layout);
     }
 
     public static class PublicationViewHolder extends RecyclerView.ViewHolder {
@@ -39,14 +38,11 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         this.publications = publications;
     }
 
-
-    //par que los adpaptadores sepan la cantidad de elementos que procesaran
     @Override
     public int getItemCount() {
         return publications == null ? 0 : publications.size();
     }
 
-    // infla el contenido de un nuevo item para la lista
     @Override
     public PublicationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -55,7 +51,6 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         return new PublicationViewHolder(view);
     }
 
-    //es el que realiza las modificaciones del contenido para cada item
     @Override
     public void onBindViewHolder(PublicationViewHolder holder, int position) {
         holder.tittle.setText(publications.get(position).getTitle());

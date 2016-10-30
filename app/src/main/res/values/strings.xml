@@ -21,4 +21,5 @@
     <string name="menu_item_logout">Logout</string>
     <string name="hint_password_npublication">Password</string>
     <string name="content_image_login">Image Login</string>
+    <string name="imagen_of_achievement">Imagen of achievement</string>
 </resources>
