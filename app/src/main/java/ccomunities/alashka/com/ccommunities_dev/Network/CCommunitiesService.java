@@ -5,6 +5,7 @@ import java.util.Map;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.Model.User;
+import ccomunities.alashka.com.ccommunities_dev.Model.UserAchievement;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -36,6 +37,9 @@ public interface CCommunitiesService {
 
     @GET("/publications")
     Call<List<Publication>> getAllPublications();
+
+    @GET("/users/{user}/achievements")
+    Call<List<UserAchievement>> getUserAchievements(@Path("user") long user_id);
 
     /*@POST("posts")
     Call<Post> post(@Body Post post, @Query("user_id") int user_id);*/

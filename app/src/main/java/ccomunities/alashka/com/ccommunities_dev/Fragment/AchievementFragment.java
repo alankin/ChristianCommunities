@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import ccomunities.alashka.com.ccommunities_dev.Adapter.AchievementAdapter;
 import ccomunities.alashka.com.ccommunities_dev.Model.Achievement;
+import ccomunities.alashka.com.ccommunities_dev.Network.AchievementAsyncTask;
 import ccomunities.alashka.com.ccommunities_dev.R;
 
 /**
@@ -46,8 +47,8 @@ public class AchievementFragment extends Fragment {
         adapter = new AchievementAdapter(getActivity());
         recycler.setAdapter(adapter);
 
-//        AchievementAsyncTask task = new AchievementAsyncTask(this);
-//        task.execute();
+        AchievementAsyncTask task = new AchievementAsyncTask(this);
+        task.execute();
 
         return  view;
 
