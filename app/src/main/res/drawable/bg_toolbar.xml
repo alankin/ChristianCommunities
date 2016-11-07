@@ -5,7 +5,8 @@
     android:layout_height="match_parent">
     <gradient
         android:angle="270"
-        android:startColor="#ffffff"
-        android:endColor="#C5CAE9"
-        android:type="linear" />
+        android:startColor="#C5CAE9"
+        android:endColor="#3F51B5"
+        android:type="linear"
+        />
 </shape>

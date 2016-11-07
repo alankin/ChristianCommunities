@@ -9,19 +9,14 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:theme="@style/MyMaterialTheme">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/MyMaterialTheme" />
 
        <TextView
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
+           android:paddingTop="10dp"
            android:textAlignment="center"
            android:textSize="20sp"
            android:textStyle="bold"
@@ -98,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/hint_description_npublication"
-                    android:inputType="text" />
+                    android:inputType="textMultiLine" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
@@ -181,8 +176,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/button_cancel"
-                android:textColor="@color/colorAccent"
-                android:backgroundTint="@color/colorAccent"
                 android:onClick="cancelPublication"/>
 
             <Button

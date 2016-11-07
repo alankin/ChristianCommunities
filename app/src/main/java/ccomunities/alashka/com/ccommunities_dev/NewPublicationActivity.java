@@ -11,6 +11,9 @@ public class NewPublicationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_publication);
 
+
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
     }
 
     public void savePublication(View view) {

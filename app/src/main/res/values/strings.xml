@@ -22,4 +22,10 @@
     <string name="hint_password_npublication">Password</string>
     <string name="content_image_login">Image Login</string>
     <string name="imagen_of_achievement">Imagen of achievement</string>
+    <string name="login">Login</string>
+    <string name="text_password">Password</string>
+    <string name="text_username">Username</string>
+    <string name="text_forgot_the_password">Forgot the password</string>
+    <string name="text_sign_in">Sign in</string>
+    <string name="image_login">Login</string>
 </resources>
