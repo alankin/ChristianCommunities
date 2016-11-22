@@ -32,11 +32,17 @@ public interface CCommunitiesService {
     @GET("/publications")
     Call<List<Publication>> getPublications(@Query("user_id") long user_id);
 
+    @GET("/publications")
+    Call<List<Publication>> getAllPublications();
+
+    @POST("/publications")
+    Call<Publication> createPublication(@Body Publication publication);
+
     @GET("/users")
     Call<List<User>> getUsers();
 
-    @GET("/publications")
-    Call<List<Publication>> getAllPublications();
+    @GET("/users/{user}")
+    Call<User> getUser(@Path("user") long user_id);
 
     @GET("/users/{user}/achievements")
     Call<List<UserAchievement>> getUserAchievements(@Path("user") long user_id);

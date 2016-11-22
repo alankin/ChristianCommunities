@@ -1,6 +1,7 @@
 package ccomunities.alashka.com.ccommunities_dev.Model;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
 
 import java.util.Date;
 import java.util.List;
@@ -15,11 +16,21 @@ public class Publication extends SugarRecord {
     Date date;
     String place;
     User user;
+    @Ignore
+    Long user_id;
 
     public Publication() {
     }
 
     public Publication(String title, String description, Date date, String place, User user) {
+    }
+
+    public Publication(String title, String description, Date date, String place, Long user_id) {
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.place = place;
+        this.user_id = user_id;
     }
 
     public Publication(String title, String description) {
@@ -67,11 +78,19 @@ public class Publication extends SugarRecord {
         this.user = user;
     }
 
-    public List<Rate> getRates(){
+    public Long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
+    }
+
+    public List<Rate> getRates() {
         return Rate.find(Rate.class, "publication = ?", String.valueOf(this.getId()));
     }
 
-    public List<Comment> getComment(){
+    public List<Comment> getComment() {
         return Comment.find(Comment.class, "publication = ?", String.valueOf(this.getId()));
     }
 }

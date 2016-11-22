@@ -42,8 +42,6 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
         Call<List<Publication>> call = service.getAllPublications();
 
         try {
-            //loadPostFromDatabase();
-
             Response<List<Publication>> response = call.execute();
             return response.body();
         } catch (IOException e) {
@@ -55,32 +53,21 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
 
     @Override
     protected void onPostExecute(List<Publication> publications) {
-
-        fragment.getAdapter().clearData();
-        fragment.getAdapter().addAll(publications);
-        //savePublicationDB(publications);
+        if (!publications.isEmpty()) {
+            fragment.getAdapter().clearData();
+            fragment.getAdapter().addAll(publications);
+            savePublicationDB(publications);
+        }
     }
 
-    private void savePublicationDB(List<Publication> publications){
-        //List<Post> storagePosts = Post.listAll(Post.class);
+    private void savePublicationDB(List<Publication> publications) {
+        List<Publication> storagePublications = Publication.listAll(Publication.class);
         Publication.deleteAll(Publication.class);
 
+        //System.out.println("+++++++++++++++++++++++");
         for (Publication publication : publications) {
-            System.out.println("Saving on DB:" + publication.getTitle());
-            //post.setUser(new User());
+            //System.out.println("Saving on DB:" + publication.getTitle());
             publication.save();
         }
     }
-
-    /*private void loadPostFromDatabase(){
-        System.out.println("Loading post from database");
-        List<Publication> posts = Publication.listAll(Publication.class);
-        for (Publication post : posts) {
-            System.out.println("PUBLICATION:" + post.toString());
-            post.setUser(new User());
-        }
-        //System.out.println(posts.toString());
-        fragment.getAdapter().clear();
-        fragment.getAdapter().addAll(posts);
-    }*/
 }

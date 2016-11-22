@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -46,7 +47,7 @@ public class PublicationFragment extends Fragment {
 
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), NewPublicationActivity.class );
+                Intent intent = new Intent(view.getContext(), NewPublicationActivity.class);
                 startActivity(intent);
 
             }
@@ -72,6 +73,8 @@ public class PublicationFragment extends Fragment {
         adapter = new PublicationAdapter(getActivity());
         recycler.setAdapter(adapter);
 
+        loadPostFromDatabase();
+
         PublicationAsyncTask task = new PublicationAsyncTask(this);
         task.execute();
 
@@ -80,5 +83,20 @@ public class PublicationFragment extends Fragment {
 
     public PublicationAdapter getAdapter() {
         return adapter;
+    }
+
+    private void loadPostFromDatabase() {
+        //System.out.println("Loading post from database");
+        List<Publication> publications = Publication.listAll(Publication.class);
+        //System.out.println("+++++++++++++++++++++++");
+        for (Publication publication : publications) {
+            System.out.println("PUBLICATION:" + publication.toString());
+        }
+
+        if (!publications.isEmpty()) {
+            //System.out.println(posts.toString());
+            getAdapter().clearData();
+            getAdapter().addAll(publications);
+        }
     }
 }
