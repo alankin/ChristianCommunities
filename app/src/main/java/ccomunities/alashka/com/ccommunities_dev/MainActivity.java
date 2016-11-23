@@ -3,6 +3,7 @@ package ccomunities.alashka.com.ccommunities_dev;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.Community;
 import ccomunities.alashka.com.ccommunities_dev.Fragment.PublicationFragment;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             R.mipmap.tab_user
     };
 
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
             /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
+            fab = (FloatingActionButton) findViewById(R.id.fabMain);
+
+            fab.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), NewPublicationActivity.class);
+                    startActivity(intent);
+
+                }
+            });
 
             viewPager = (ViewPager) findViewById(R.id.viewpager);
             setupViewPager(viewPager);
+            overrideEvents(fab);
 
             tabLayout = (TabLayout) findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
@@ -52,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
     private void _createComunity() {
         Community community = new Community();
         community.setDescription("Comunidad cristiana");
@@ -59,6 +74,35 @@ public class MainActivity extends AppCompatActivity {
         community.setName("Comunidad Cristiana Belen");
         community.setResponsibleId("1");
         community.save();
+    }
+
+    private void overrideEvents(final FloatingActionButton fab) {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        fab.show();
+                        break;
+                    case 1:
+                        fab.hide();
+                        break;
+                    default:
+                        fab.hide();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     private void setupTabIcons() {

@@ -22,8 +22,6 @@ import ccomunities.alashka.com.ccommunities_dev.R;
 
 public class PublicationFragment extends Fragment {
 
-    private FloatingActionButton fab;
-
     private RecyclerView recycler;
     private PublicationAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -42,16 +40,6 @@ public class PublicationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_publication, container, false);
-
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), NewPublicationActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
         List items = new ArrayList();
 
