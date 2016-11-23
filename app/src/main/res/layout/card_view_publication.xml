@@ -9,74 +9,103 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="6dp" >
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/image_user"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/image_men_perfil"
             android:layout_margin="10dp"
-            android:contentDescription="@string/image_perfil_description"/>
+            android:contentDescription="@string/image_perfil_description"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/perfil" />
 
         <TextView
             android:id="@+id/title_publication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_toEndOf="@+id/image_user"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:layout_toEndOf="@+id/image_user"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/date_publication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/fecha_example"
+            android:layout_alignStart="@+id/title_publication"
             android:layout_below="@+id/title_publication"
-            android:layout_alignStart="@+id/title_publication" />
+            android:text="@string/fecha_example"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/description_publication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignStart="@+id/image_user"
             android:layout_below="@+id/image_user"
-            android:layout_alignStart="@+id/image_user" />
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f2f0f0">
 
-            <ImageView
-                android:id="@+id/like_publication"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:src="@mipmap/icon_like"
-                android:contentDescription="@string/icon_like"/>
-            <ImageView
-                android:id="@+id/like_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/like_publication"
-                android:layout_alignParentBottom="true"
-                android:src="@mipmap/icon_comment"
-                android:contentDescription="@string/icon_like"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/like_publication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/icon_like"
+                        android:src="@mipmap/icon_like"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="11dp"
+                        android:text="@string/text_like"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/like_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/icon_like"
+                        android:src="@mipmap/icon_comment"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/text_comment" />
+                </LinearLayout>
+
+            </LinearLayout>
 
         </RelativeLayout>
 

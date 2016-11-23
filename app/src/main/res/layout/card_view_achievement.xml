@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:padding="10dp">
         <ImageView
             android:id="@+id/image_user"
             android:layout_width="50dp"
@@ -25,16 +25,27 @@
             android:layout_toEndOf="@+id/image_user"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
-            android:text="First publication"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            />
+        <TextView
+            android:id="@+id/date_achievement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/name_achievement"
+            android:layout_alignStart="@+id/name_achievement"
+            android:text="@string/fecha_example"
             />
         <TextView
             android:id="@+id/description_achievement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_below="@+id/name_achievement"
+            android:layout_below="@+id/date_achievement"
             android:layout_alignStart="@+id/name_achievement"
-            android:text="Achievement for your first publication"/>
+            android:layout_marginTop="10dp"
+            />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

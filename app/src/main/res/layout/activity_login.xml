@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:singleLine="true"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -42,6 +43,8 @@
         android:hint="@string/text_username"
         android:textAlignment="center"
         android:textColorHint="#c0b3bd"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="#b399ad"
         android:layout_marginTop="40dp"/>
 
@@ -51,6 +54,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
         android:hint="@string/text_password"
         android:textColorHint="#c0b3bd"
         android:textColor="#b399ad"

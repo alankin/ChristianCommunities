@@ -49,10 +49,9 @@ public class MainActivity extends AppCompatActivity {
             setupTabIcons();
 
             //_createComunity();
+
         }
-
     }
-
     private void _createComunity() {
         Community community = new Community();
         community.setDescription("Comunidad cristiana");
