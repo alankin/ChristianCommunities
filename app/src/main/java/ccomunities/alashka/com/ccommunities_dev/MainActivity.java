@@ -3,6 +3,7 @@ package ccomunities.alashka.com.ccommunities_dev;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -13,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.util.Locale;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.Community;
 import ccomunities.alashka.com.ccommunities_dev.Fragment.PublicationFragment;
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setLocale();
 
         if (isLogged()) {
 
@@ -65,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
             //_createComunity();
 
         }
+    }
+
+    private void setLocale() {
+        Locale.setDefault(new Locale("spa", "ESP"));
     }
 
     private void _createComunity() {
