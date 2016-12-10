@@ -1,6 +1,7 @@
 package ccomunities.alashka.com.ccommunities_dev.Network;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +24,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class LoginAsyncTask extends AsyncTask<User, Void, List<User>> {
+public class LoginAsyncTask extends AsyncTask<Object, Void, List<User>> {
+    private ProgressDialog loading;
     private LoginActivity loginActivity;
     private User userToLogin;
 
@@ -35,16 +37,17 @@ public class LoginAsyncTask extends AsyncTask<User, Void, List<User>> {
     }
 
     @Override
-    protected List<User> doInBackground(User... params) {
+    protected List<User> doInBackground(Object... params) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ccommunitiesservice-dev.herokuapp.com/")
+                .baseUrl(loginActivity.getResources().getString(R.string.service_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         CCommunitiesService service = retrofit.create(CCommunitiesService.class);
         //Todo: Implement and change by login method
         Call<List<User>> call = service.getUsers();
 
-        userToLogin = params[0];
+        userToLogin = (User) params[0];
+        loading = (ProgressDialog) params[1];
 
         try {
             Response<List<User>> response = call.execute();
@@ -59,6 +62,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, List<User>> {
     @Override
     protected void onPostExecute(List<User> users) {
         Map<String, Object> user = userExist(userToLogin, users);
+        loading.dismiss();
         if (user.get(EXIST_KEY) == Boolean.TRUE) {
             User userValid = (User) user.get(USER_KEY);
 
@@ -71,7 +75,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, List<User>> {
             Intent intent = new Intent(loginActivity, MainActivity.class);
             loginActivity.startActivity(intent);
         } else {
-            Toast.makeText(loginActivity, "Username and Password invalid. Try again please.", Toast.LENGTH_LONG).show();
+            Toast.makeText(loginActivity, loginActivity.getResources().getString(R.string.loggin_invalid), Toast.LENGTH_LONG).show();
         }
     }
 

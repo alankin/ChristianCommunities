@@ -3,6 +3,7 @@ package ccomunities.alashka.com.ccommunities_dev.Network;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,6 +58,8 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
             fragment.getAdapter().clearData();
             fragment.getAdapter().addAll(publications);
             savePublicationDB(publications);
+        } else {
+            Toast.makeText(fragment.getContext(), "Yo don't have internet connection", Toast.LENGTH_SHORT).show();
         }
     }
 

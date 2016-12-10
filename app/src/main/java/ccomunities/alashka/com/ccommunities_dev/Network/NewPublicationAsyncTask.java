@@ -8,6 +8,7 @@ import java.io.IOException;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.NewPublicationActivity;
+import ccomunities.alashka.com.ccommunities_dev.R;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -23,7 +24,7 @@ public class NewPublicationAsyncTask extends AsyncTask<Object, Void, Publication
     @Override
     protected Publication doInBackground(Object... params) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ccommunitiesservice-dev.herokuapp.com/")
+                .baseUrl(publicationActivity.getResources().getString(R.string.service_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         CCommunitiesService service = retrofit.create(CCommunitiesService.class);
@@ -44,10 +45,10 @@ public class NewPublicationAsyncTask extends AsyncTask<Object, Void, Publication
     @Override
     protected void onPostExecute(Publication publication) {
         if (publication == null) {
-            Toast.makeText(publicationActivity, "The publication was not created, try again please.", Toast.LENGTH_LONG).show();
+            Toast.makeText(publicationActivity, publicationActivity.getResources().getString(R.string.publication_not_created), Toast.LENGTH_LONG).show();
         } else {
             System.out.println("The created publication is " + publication.getTitle());
-            Toast.makeText(publicationActivity, "The publication was created successfully.", Toast.LENGTH_LONG).show();
+            Toast.makeText(publicationActivity, publicationActivity.getResources().getString(R.string.publication_created), Toast.LENGTH_LONG).show();
         }
     }
 }

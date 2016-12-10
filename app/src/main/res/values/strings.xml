@@ -20,8 +20,8 @@
     <string name="hint_place">Place</string>
     <string name="menu_item_logout">Logout</string>
     <string name="hint_password_npublication">Password</string>
-    <string name="content_image_login">Image Login</string>
-    <string name="imagen_of_achievement">Imagen of achievement</string>
+    <string name="content_image_login">Login image</string>
+    <string name="imagen_of_achievement">achievement image</string>
     <string name="login">Login</string>
     <string name="text_password">Password</string>
     <string name="text_username">Username</string>
@@ -30,4 +30,14 @@
     <string name="image_login">Login</string>
     <string name="text_like">Like</string>
     <string name="text_comment">Comment</string>
+    <string name="christian">Christian</string>
+    <string name="communities">Communities</string>
+    <string name="loading_user">Logging in</string>
+    <string name="loggin_invalid">Username and Password invalid. Try again please.</string>
+    <string name="publication_not_created">The publication was not created, try again please.</string>
+    <string name="publication_created">The publication was created successfully.</string>
+    <string name="publication_tab_name">PUBLICATION</string>
+    <string name="achievement_tab_name">ACHIEVEMENT</string>
+
+    <string name="service_url">https://ccommunitiesservice-dev.herokuapp.com/</string>
 </resources>

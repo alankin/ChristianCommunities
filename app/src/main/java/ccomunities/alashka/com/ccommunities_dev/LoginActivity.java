@@ -1,5 +1,6 @@
 package ccomunities.alashka.com.ccommunities_dev;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private ProgressDialog loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("User", user.getUsername());
 
         LoginAsyncTask task = new LoginAsyncTask(this);
-        task.execute(user);
+        loading = ProgressDialog.show(this, "", getResources().getString(R.string.loading_user), true);
+        task.execute(user, loading);
     }
 }

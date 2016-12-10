@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new PublicationFragment(), "PUBLICATION");
-        adapter.addFragment(new AchievementFragment(), "ACHIEVEMENT");
+        adapter.addFragment(new PublicationFragment(), getResources().getString(R.string.publication_tab_name));
+        adapter.addFragment(new AchievementFragment(), getResources().getString(R.string.achievement_tab_name));
 
         viewPager.setAdapter(adapter);
     }

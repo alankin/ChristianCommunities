@@ -37,7 +37,7 @@ public class AchievementAsyncTask extends AsyncTask<Void, Void, List<Achievement
     @Override
     protected List<Achievement> doInBackground(Void... params) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ccommunitiesservice-dev.herokuapp.com/")
+                .baseUrl(fragment.getContext().getResources().getString(R.string.service_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         CCommunitiesService service = retrofit.create(CCommunitiesService.class);
@@ -59,10 +59,8 @@ public class AchievementAsyncTask extends AsyncTask<Void, Void, List<Achievement
 
     @Override
     protected void onPostExecute(List<Achievement> achievements) {
-
         fragment.getAdapter().clearData();
         fragment.getAdapter().addAll(achievements);
-        //savePublicationDB(publications);
     }
 
     private List<Achievement> getAchievements(List<UserAchievement> achievements) {
