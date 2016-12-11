@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.view.Window;
 import android.view.WindowManager;
 import android.graphics.PorterDuff;
+import android.content.Intent;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.User;
 import ccomunities.alashka.com.ccommunities_dev.Network.LoginAsyncTask;
@@ -42,5 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         LoginAsyncTask task = new LoginAsyncTask(this);
         loading = ProgressDialog.show(this, "", getResources().getString(R.string.loading_user), true);
         task.execute(user, loading);
+    }
+    public void signIn(View view) {
+
+        Intent intent = new Intent(view.getContext(), SingInActivity.class);
+        startActivity(intent); new LoginAsyncTask(this);
+
     }
 }

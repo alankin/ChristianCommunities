@@ -40,4 +40,11 @@
     <string name="achievement_tab_name">ACHIEVEMENT</string>
 
     <string name="service_url">https://ccommunitiesservice-dev.herokuapp.com/</string>
+
+    <string name="username_sign_in">Username</string>
+    <string name="password_sign_in">Password</string>
+    <string name="name_sign_in">Name</string>
+    <string name="last_name_sign_in">Last name</string>
+    <string name="email_sign_in">Email</string>
+    <string name="icon_comment">Icon comment</string>
 </resources>

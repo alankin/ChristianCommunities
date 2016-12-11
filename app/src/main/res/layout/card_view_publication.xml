@@ -66,9 +66,10 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <ImageButton
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:id="@+id/like_publication"
-                        android:layout_width="wrap_content"
+                        android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:contentDescription="@string/icon_like"
                         android:src="@mipmap/icon_like"
@@ -90,19 +91,22 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <ImageButton
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:id="@+id/like_comment"
-                        android:layout_width="wrap_content"
+                        android:layout_width="20dp"
                         android:layout_height="match_parent"
-                        android:contentDescription="@string/icon_like"
+                        android:contentDescription="@string/icon_comment"
                         android:src="@mipmap/icon_comment"
-                        android:layout_marginEnd="4dp"/>
+                        android:layout_marginEnd="4dp"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
-                        android:text="@string/text_comment" />
+                        android:text="@string/text_comment"
+                        />
                 </LinearLayout>
 
             </LinearLayout>

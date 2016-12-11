@@ -1,102 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/login_degrade"
-android:paddingBottom="@dimen/activity_vertical_margin"
-android:paddingLeft="32dp"
-android:paddingRight="32dp"
-android:paddingTop="@dimen/activity_vertical_margin"
-android:orientation="vertical"
-app:layout_behavior="@string/appbar_scrolling_view_behavior"
-tools:context="ccomunities.alashka.com.ccommunities_dev.LoginActivity">
-
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="50dp"
-    android:src="@drawable/fish_white"
-
-    android:adjustViewBounds="true"
-    android:maxWidth="220dp"
-    android:maxHeight="300dp"
-    android:contentDescription="@string/image_login"/>
-
-<TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/app_name"
-    android:singleLine="true"
-    android:layout_marginTop="20dp"
-    android:textAlignment="center"
-    android:textSize="30sp"
-    android:fontFamily="sans-serif-light"
-    android:textColor="#c0b3bd"/>
+    android:layout_height="match_parent"
+    android:background="@drawable/login_degrade"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ccomunities.alashka.com.ccommunities_dev.LoginActivity">
 
-<EditText
-    android:id="@+id/login_username"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/text_username"
-    android:textAlignment="center"
-    android:textColorHint="#c0b3bd"
-    android:maxLines="1"
-    android:singleLine="true"
-    android:textColor="#b399ad"
-    android:layout_marginTop="40dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
 
-<EditText
-    android:id="@+id/login_password"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAlignment="center"
-    android:inputType="textPassword"
-    android:maxLines="1"
-    android:singleLine="true"
-    android:hint="@string/text_password"
-    android:textColorHint="#c0b3bd"
-    android:textColor="#b399ad"
-    android:layout_marginTop="30dp"/>
+        android:contentDescription="@string/image_login"
+        android:maxHeight="300dp"
+        android:maxWidth="220dp"
+        android:src="@drawable/fish_white" />
 
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="50dp"
-    android:background="@drawable/b_button"
-    android:onClick="login"
-    android:text="@string/login_button"
-    android:textColor="#b399ad"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:textAlignment="center"
-    android:fontFamily="sans-serif-light"
-    android:textAllCaps="false"
-    />
-<TextView
-    android:id="@+id/login_forget_password"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAlignment="center"
-    android:text="@string/text_forgot_the_password"
-    android:textColor="#c0b3bd"
-    android:layout_marginTop="10dp"/>
-<Button
-    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="60dp"
-    android:textAllCaps="false"
-    android:onClick=""
-    android:text="@string/text_sign_in"
-    android:textColor="#FFFFFF"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:textAlignment="center"
-    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="#c0b3bd"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="@string/text_username"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#b399ad"
+        android:textColorHint="#c0b3bd" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="@string/text_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#b399ad"
+        android:textColorHint="#c0b3bd" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/b_button"
+        android:fontFamily="sans-serif-light"
+        android:onClick="login"
+        android:text="@string/login_button"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#b399ad"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/login_forget_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_forgot_the_password"
+        android:textAlignment="center"
+        android:textColor="#c0b3bd" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:onClick="signIn"
+        android:text="@string/text_sign_in"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
