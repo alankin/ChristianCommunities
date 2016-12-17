@@ -2,14 +2,16 @@ package ccomunities.alashka.com.ccommunities_dev.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
+import ccomunities.alashka.com.ccommunities_dev.Listener.CommentClickListener;
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.R;
 
@@ -26,11 +28,18 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     public static class PublicationViewHolder extends RecyclerView.ViewHolder {
         public TextView tittle;
         public TextView description;
+        public Button commentButton;
 
         public PublicationViewHolder(View view) {
             super(view);
+
+            initialize(view);
+        }
+
+        private void initialize(View view) {
             tittle = (TextView) view.findViewById(R.id.title_publication);
             description = (TextView) view.findViewById(R.id.description_publication);
+            commentButton = (Button) view.findViewById(R.id.like_comment);
         }
     }
 
@@ -55,7 +64,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     public void onBindViewHolder(PublicationViewHolder holder, int position) {
         holder.tittle.setText(publications.get(position).getTitle());
         holder.description.setText(publications.get(position).getDescription());
-
+        holder.commentButton.setOnClickListener(new CommentClickListener(publications.get(position).getId()));
     }
 
     public void clearData() {
