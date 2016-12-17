@@ -13,8 +13,10 @@ public class Publication extends SugarRecord {
 
     String title;
     String description;
-    Date date;
+    String date;
     String place;
+    String created_at;
+    String updated_at;
     User user;
     @Ignore
     Long user_id;
@@ -22,15 +24,17 @@ public class Publication extends SugarRecord {
     public Publication() {
     }
 
-    public Publication(String title, String description, Date date, String place, User user) {
+    public Publication(String title, String description, Date date, String place, User user, String created_at, String updated_at) {
     }
 
-    public Publication(String title, String description, Date date, String place, Long user_id) {
+    public Publication(String title, String description, String date, String place, Long user_id, String created_at, String updated_at) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.place = place;
         this.user_id = user_id;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public Publication(String title, String description) {
@@ -54,11 +58,11 @@ public class Publication extends SugarRecord {
         this.description = description;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -84,6 +88,22 @@ public class Publication extends SugarRecord {
 
     public void setUser_id(Long user_id) {
         this.user_id = user_id;
+    }
+
+    public String getCreatedAt() {
+        return created_at;
+    }
+
+    public void setCreatedAt(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdatedAt() {
+        return updated_at;
+    }
+
+    public void setUpdatedAt(String updated_at) {
+        this.updated_at = updated_at;
     }
 
     public List<Rate> getRates() {

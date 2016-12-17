@@ -12,11 +12,13 @@ public class Comment extends SugarRecord {
     Date date;
     User user;
     Publication publication;
+    String createdAt;
+    String updatedAt;
 
     public Comment() {
     }
 
-    public Comment(String comment, Date date, User user, Publication publication) {
+    public Comment(String comment, Date date, User user, Publication publication, String createdAt, String updatedAt) {
     }
 
     public String getComment() {
@@ -49,5 +51,21 @@ public class Comment extends SugarRecord {
 
     public void setPublication(Publication publication) {
         this.publication = publication;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

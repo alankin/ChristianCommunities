@@ -15,6 +15,7 @@ import android.widget.EditText;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -80,20 +81,15 @@ public class NewPublicationActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         Long user_id = sharedPreferences.getLong("user_id", -1);
 
-        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy", Locale.US);
-        String dateInString = date.getText().toString();
+        //Today's date
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String today = df.format(c.getTime());
 
-        try {
-            Date date = formatter.parse(dateInString);
+        Publication publication = new Publication(title.getText().toString(), description.getText().toString(), date.getText().toString(), place.getText().toString(), user_id, today, today);
 
-            Publication publication = new Publication(title.getText().toString(), description.getText().toString(), date, place.getText().toString(), user_id);
-
-            NewPublicationAsyncTask task = new NewPublicationAsyncTask(this);
-            task.execute(publication, user_id);
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        NewPublicationAsyncTask task = new NewPublicationAsyncTask(this);
+        task.execute(publication, user_id);
 
         finish();
     }
