@@ -13,13 +13,13 @@ public class Community extends SugarRecord {
     String description;
     String responsibleId;
     String location;
-    String createdAt;
-    String updatedAt;
+    String created_at;
+    String updated_at;
 
     public Community() {
     }
 
-    public Community(String name, String description, String responsibleId, String location, String createdAt, String updatedAt) {
+    public Community(String name, String description, String responsibleId, String location, String created_at, String updated_at) {
     }
 
     public String getName() {
@@ -54,20 +54,20 @@ public class Community extends SugarRecord {
         this.location = location;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getCreated_at() {
+        return created_at;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public List<User> getUsers(){

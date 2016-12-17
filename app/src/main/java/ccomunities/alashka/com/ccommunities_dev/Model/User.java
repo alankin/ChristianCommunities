@@ -15,14 +15,14 @@ public class User extends SugarRecord {
     String lastName;
     String email;
     String pathPhoto;
-    String createdAt;
-    String updatedAt;
+    String created_at;
+    String updated_at;
     Community community;
 
     public User() {
     }
 
-    public User(String username, String name, String lastName, String email, String pathPhoto, Community community, String password, String createdAt, String updatedAt) {
+    public User(String username, String name, String lastName, String email, String pathPhoto, Community community, String password, String created_at, String updated_at) {
     }
 
     public String getPassword() {
@@ -82,19 +82,19 @@ public class User extends SugarRecord {
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public List<UserAchievement> getAchievements() {

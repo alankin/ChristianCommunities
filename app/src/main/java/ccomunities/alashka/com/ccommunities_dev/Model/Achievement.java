@@ -12,14 +12,14 @@ public class Achievement extends SugarRecord {
     String name;
     String description;
     String typeAchievement;
-    String createdAt;
-    String updatedAt;
+    String created_at;
+    String updated_at;
     Integer requiredQuantity;
 
     public Achievement() {
     }
 
-    public Achievement(String name, String description, String type, Integer requiredQuantity, String createdAt, String updatedAt) {
+    public Achievement(String name, String description, String type, Integer requiredQuantity, String created_at, String updated_at) {
     }
 
     public String getName() {
@@ -55,19 +55,19 @@ public class Achievement extends SugarRecord {
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public List<UserAchievement> getUserAchievements(){
