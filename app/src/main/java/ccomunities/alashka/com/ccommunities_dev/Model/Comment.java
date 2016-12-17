@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by ALANKIN on 10/10/16.
  */
 public class Comment extends SugarRecord {
-    String comment;
+    String content;
     Date date;
     User user;
     Publication publication;
@@ -18,15 +18,15 @@ public class Comment extends SugarRecord {
     public Comment() {
     }
 
-    public Comment(String comment, Date date, User user, Publication publication, String created_at, String updated_at) {
+    public Comment(String content, Date date, User user, Publication publication, String created_at, String updated_at) {
     }
 
-    public String getComment() {
-        return comment;
+    public String getContent() {
+        return content;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Date getDate() {
