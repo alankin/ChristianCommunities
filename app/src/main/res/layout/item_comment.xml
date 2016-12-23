@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_user_comment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/perfil"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/text_image_user_comment"/>
+    <TextView
+        android:id="@+id/name_user_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_toEndOf="@+id/image_user_comment"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <TextView
+        android:id="@+id/date_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/name_user_comment"
+        android:layout_alignStart="@+id/name_user_comment"
+        android:text="@string/date_example"
+        />
+    <TextView
+        android:id="@+id/description_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/date_comment"
+        android:layout_alignStart="@+id/name_user_comment"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

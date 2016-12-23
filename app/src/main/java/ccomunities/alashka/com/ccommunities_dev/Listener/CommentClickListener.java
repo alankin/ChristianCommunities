@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
-import ccomunities.alashka.com.ccommunities_dev.SingInActivity;
+import ccomunities.alashka.com.ccommunities_dev.CommentActivity;
 
 /**
  * Created by ALANKIN on 17/12/16.
@@ -21,8 +21,8 @@ public class CommentClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Log.d("PublicationClick", "CLick on Publication ID: "+ publicationId);
-        //Intent intent = new Intent(v.getContext(), SingInActivity.class);
-        //intent.putExtra("publicationId", publicationId);
-        //v.getContext().startActivity(intent);
+        Intent intent = new Intent(v.getContext(), CommentActivity.class);
+        intent.putExtra("publicationId", publicationId);
+        v.getContext().startActivity(intent);
     }
 }

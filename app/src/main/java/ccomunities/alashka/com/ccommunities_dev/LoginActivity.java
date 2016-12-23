@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.view.Window;
 import android.view.WindowManager;
-import android.graphics.PorterDuff;
 import android.content.Intent;
 
 import ccomunities.alashka.com.ccommunities_dev.Model.User;
@@ -46,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void signIn(View view) {
 
-        Intent intent = new Intent(view.getContext(), SingInActivity.class);
+        Intent intent = new Intent(view.getContext(), SignInActivity.class);
         startActivity(intent); new LoginAsyncTask(this);
 
     }

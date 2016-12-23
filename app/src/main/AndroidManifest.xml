@@ -39,7 +39,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ccomunities.alashka.com.ccommunities_dev.MainActivity" />
         </activity>
-        <activity android:name=".SingInActivity"/>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".CommentActivity"></activity>
     </application>
 
 </manifest>

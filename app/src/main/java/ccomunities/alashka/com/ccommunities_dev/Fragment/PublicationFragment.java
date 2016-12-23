@@ -87,4 +87,6 @@ public class PublicationFragment extends Fragment {
             getAdapter().addAll(publications);
         }
     }
+
+
 }

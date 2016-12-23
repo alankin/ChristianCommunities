@@ -10,19 +10,19 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
         <ImageView
-            android:id="@+id/image_user"
+            android:id="@+id/image_achievement"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/icon_achievement"
             android:layout_margin="10dp"
-            android:contentDescription="@string/imagen_of_achievement"/>
+            android:contentDescription="@string/text_image_achievement"/>
         <TextView
             android:id="@+id/name_achievement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_toEndOf="@+id/image_user"
+            android:layout_toEndOf="@+id/image_achievement"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
@@ -35,7 +35,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_below="@+id/name_achievement"
             android:layout_alignStart="@+id/name_achievement"
-            android:text="@string/fecha_example"
+            android:text="@string/date_example"
             />
         <TextView
             android:id="@+id/description_achievement"

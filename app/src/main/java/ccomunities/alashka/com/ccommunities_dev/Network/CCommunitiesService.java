@@ -3,6 +3,7 @@ package ccomunities.alashka.com.ccommunities_dev.Network;
 import java.util.List;
 import java.util.Map;
 
+import ccomunities.alashka.com.ccommunities_dev.Model.Comment;
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.Model.User;
 import ccomunities.alashka.com.ccommunities_dev.Model.UserAchievement;
@@ -46,6 +47,9 @@ public interface CCommunitiesService {
 
     @GET("/users/{user}/achievements")
     Call<List<UserAchievement>> getUserAchievements(@Path("user") long user_id);
+
+    @GET("/publications/{id}/comments")
+    Call<List<Comment>> getComments(@Path("id") long publication_id);
 
     /*@POST("posts")
     Call<Post> post(@Body Post post, @Query("user_id") int user_id);*/

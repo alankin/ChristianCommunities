@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/title_publication"
             android:layout_below="@+id/title_publication"
-            android:text="@string/fecha_example"
+            android:text="@string/date_example"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
