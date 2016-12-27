@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.method.KeyListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -30,6 +32,8 @@ public class NewPublicationActivity extends AppCompatActivity {
     private EditText description;
     private EditText date;
     private EditText place;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,26 @@ public class NewPublicationActivity extends AppCompatActivity {
         description = (EditText) findViewById(R.id.edit_text_description_npublication);
         date = (EditText) findViewById(R.id.edit_text_date_npublication);
         place = (EditText) findViewById(R.id.edit_text_place_npublication);
+
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_new_publication);
+        toolbar.setTitle(R.string.edit_text_new_publication);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.toolbar_back);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+
+        );
     }
 
     private void addEvents() {

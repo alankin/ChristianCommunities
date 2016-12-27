@@ -12,16 +12,17 @@
         android:layout_height="?attr/actionBarSize"
         android:theme="@style/MyMaterialTheme">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_new_publication"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="10dp"
-           android:textAlignment="center"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           android:textColor="@color/colorTextIcons"
-           android:text="@string/edit_text_new_publication"/>
+        </android.support.v7.widget.Toolbar>
+
 
     </android.support.design.widget.AppBarLayout>
 
@@ -46,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/icon_title"
-                android:contentDescription="@string/icon_new_publication"/>
+                android:contentDescription="@string/icon_new_publication"
+                android:src="@mipmap/icon_title" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/label_title_npublication"
@@ -78,8 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/icon_title"
-                android:contentDescription="@string/icon_new_publication"/>
+                android:contentDescription="@string/icon_new_publication"
+                android:src="@mipmap/icon_title" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/label_description_npublication"
@@ -109,8 +110,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/icon_calendar"
-                android:contentDescription="@string/icon_new_publication"/>
+                android:contentDescription="@string/icon_new_publication"
+                android:src="@mipmap/icon_calendar" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/label_date_npublication"
@@ -128,6 +129,7 @@
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/area_place"
             android:layout_width="match_parent"
@@ -140,8 +142,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/icon_map"
-                android:contentDescription="@string/icon_new_publication"/>
+                android:contentDescription="@string/icon_new_publication"
+                android:src="@mipmap/icon_map" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/label_place_npublication"
@@ -175,8 +177,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/button_cancel"
-                android:onClick="cancelPublication"/>
+                android:onClick="cancelPublication"
+                android:text="@string/button_cancel" />
 
             <Button
                 android:id="@+id/button_save_publication"
@@ -184,9 +186,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimary"
+                android:onClick="savePublication"
                 android:text="@string/button_save"
-                android:textColor="@color/colorTextIcons"
-                android:onClick="savePublication" />
+                android:textColor="@color/colorTextIcons" />
         </LinearLayout>
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
