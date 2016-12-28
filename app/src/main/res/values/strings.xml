@@ -52,4 +52,7 @@
     <string name="text_image_achievement">Image achievement</string>
     <string name="icon_send_context">Icon Send</string>
     <string name="text_write_your_comment">Write your comment</string>
+    <string name="text_count_like">Like</string>
+    <string name="text_count_comment">Comment</string>
+    <string name="underscore_like_comment">-</string>
 </resources>

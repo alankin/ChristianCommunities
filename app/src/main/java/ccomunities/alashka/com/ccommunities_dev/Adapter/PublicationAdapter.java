@@ -30,6 +30,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     public static class PublicationViewHolder extends RecyclerView.ViewHolder {
         public TextView tittle;
         public TextView description;
+        public TextView date;
         public LinearLayout commentLayout;
         public CircleImageView profileImageView;
         private View viewAdapter;
@@ -43,6 +44,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         private void initialize(View view) {
             tittle = (TextView) view.findViewById(R.id.title_publication);
             description = (TextView) view.findViewById(R.id.description_publication);
+            date = (TextView) view.findViewById(R.id.date_publication);
             commentLayout = (LinearLayout) view.findViewById(R.id.id_comment_layout);
             profileImageView = (CircleImageView) view.findViewById(R.id.image_user);
             viewAdapter = view;
@@ -70,6 +72,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     public void onBindViewHolder(PublicationViewHolder holder, int position) {
         holder.tittle.setText(publications.get(position).getTitle());
         holder.description.setText(publications.get(position).getDescription());
+        holder.date.setText(publications.get(position).getDate());
         holder.commentLayout.setOnClickListener(new CommentClickListener(publications.get(position).getId()));
         //holder.profileImageView = Glide.with.....load(...);
         if (null != publications.get(position).getUser()) {
