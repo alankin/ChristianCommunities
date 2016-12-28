@@ -3,6 +3,7 @@ package ccomunities.alashka.com.ccommunities_dev;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +17,7 @@ public class CommentActivity extends AppCompatActivity {
     private ListView listView;
     private CommentAdapter commentAdapter;
     private Long publicationId;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +34,7 @@ public class CommentActivity extends AppCompatActivity {
         CommentAsyncTask task = new CommentAsyncTask(this);
         task.execute(publicationId);
 
-        /*listView.setOnClickListener(new AdapterView.OnItemClickListener(){
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(), SetAmmountActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-
+        initToolbar();
     }
 
     public  CommentAdapter getCommentAdapter(){
@@ -51,5 +43,23 @@ public class CommentActivity extends AppCompatActivity {
 
     public void setAdapter(CommentAdapter adapter) {
         this.commentAdapter = adapter;
+    }
+
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_list_comment);
+        toolbar.setTitle(R.string.edit_text_comment);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.toolbar_back);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+
+        );
     }
 }

@@ -8,11 +8,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import ccomunities.alashka.com.ccommunities_dev.Listener.CommentClickListener;
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by nicaela on 19/10/16.
@@ -28,6 +31,8 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         public TextView tittle;
         public TextView description;
         public LinearLayout commentLayout;
+        public CircleImageView profileImageView;
+        private View viewAdapter;
 
         public PublicationViewHolder(View view) {
             super(view);
@@ -39,6 +44,8 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
             tittle = (TextView) view.findViewById(R.id.title_publication);
             description = (TextView) view.findViewById(R.id.description_publication);
             commentLayout = (LinearLayout) view.findViewById(R.id.id_comment_layout);
+            profileImageView = (CircleImageView) view.findViewById(R.id.image_user);
+            viewAdapter = view;
         }
     }
 
@@ -64,6 +71,10 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         holder.tittle.setText(publications.get(position).getTitle());
         holder.description.setText(publications.get(position).getDescription());
         holder.commentLayout.setOnClickListener(new CommentClickListener(publications.get(position).getId()));
+        //holder.profileImageView = Glide.with.....load(...);
+        if (null != publications.get(position).getUser()) {
+            Glide.with(holder.viewAdapter.getContext()).load(publications.get(position).getUser().getPathPhoto()).into(holder.profileImageView);
+        }
     }
 
     public void clearData() {

@@ -134,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:onClick="SingIn"
+            android:onClick="signIn"
             android:text="@string/text_sign_in"
             android:textAlignment="center"
             android:textAllCaps="false"

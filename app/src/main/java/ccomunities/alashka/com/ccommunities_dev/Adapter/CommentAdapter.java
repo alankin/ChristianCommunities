@@ -16,6 +16,10 @@ import android.app.Activity;
 
 import java.util.ArrayList;
 
+import com.bumptech.glide.Glide;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 import ccomunities.alashka.com.ccommunities_dev.Model.Comment;
 import ccomunities.alashka.com.ccommunities_dev.R;
 
@@ -49,6 +53,7 @@ public class CommentAdapter  extends ArrayAdapter<Comment>{
         TextView nameUser = (TextView) currentView.findViewById(R.id.name_user_comment);
         TextView description = (TextView) currentView.findViewById(R.id.description_comment);
         TextView date = (TextView) currentView.findViewById(R.id.date_comment);
+        CircleImageView profileImageView = (CircleImageView) currentView.findViewById(R.id.image_user_comment);
 
         /*nameUser.setText(comment != null ? comment.getUser().getName() + " " : EMPTY_STRING );
         description.setText(comment != null ? comment.getContent() + " " : EMPTY_STRING );
@@ -58,16 +63,8 @@ public class CommentAdapter  extends ArrayAdapter<Comment>{
         description.setText(comment.getContent());
         date.setText(comment.getDate().toString());
 
-        //setImage(currentView, comment);
-
+        Glide.with(getContext()).load(comment.getUser().getPathPhoto()).into(profileImageView);
 
         return  currentView;
-    }
-    private void setImage(View currentView, Comment comment) {
-        ImageView image = (ImageView) currentView.findViewById(R.id.image_user_comment);
-
-        byte[] decodedString = Base64.decode(comment.getUser().getPathPhoto(), Base64.DEFAULT);
-        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-        image.setImageBitmap(decodedByte);
     }
 }

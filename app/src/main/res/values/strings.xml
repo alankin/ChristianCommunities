@@ -17,6 +17,8 @@
     <string name="icon_new_publication">Icon new publication</string>
     <string name="date_example">10-12-2016</string>
     <string name="edit_text_new_publication">New Publication</string>
+    <string name="edit_text_sign_in">Sign In</string>
+    <string name="edit_text_comment">Comment</string>
     <string name="hint_place">Place</string>
     <string name="menu_item_logout">Logout</string>
     <string name="hint_password_npublication">Password</string>

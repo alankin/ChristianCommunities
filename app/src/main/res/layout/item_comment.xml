@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_user_comment"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/perfil"
-        android:layout_margin="10dp"
-        android:contentDescription="@string/text_image_user_comment"/>
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        app:civ_border_color="#c0b3bd"
+        app:civ_border_width="2dp" />
     <TextView
         android:id="@+id/name_user_comment"
         android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
         android:layout_toEndOf="@+id/image_user_comment"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
         />
@@ -29,7 +31,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_below="@+id/name_user_comment"
         android:layout_alignStart="@+id/name_user_comment"
-        android:text="@string/date_example"
         />
     <TextView
         android:id="@+id/description_comment"
