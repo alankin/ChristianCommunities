@@ -55,4 +55,6 @@
     <string name="text_count_like">Like</string>
     <string name="text_count_comment">Comment</string>
     <string name="underscore_like_comment">-</string>
+    <string name="comment_error">There was a problem creating the comment</string>
+    <string name="comment_success">Your comment was posted.</string>
 </resources>

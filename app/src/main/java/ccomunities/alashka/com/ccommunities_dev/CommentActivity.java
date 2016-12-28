@@ -1,16 +1,26 @@
 package ccomunities.alashka.com.ccommunities_dev;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import ccomunities.alashka.com.ccommunities_dev.Adapter.CommentAdapter;
 import ccomunities.alashka.com.ccommunities_dev.Model.Comment;
+import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.Network.CommentAsyncTask;
+import ccomunities.alashka.com.ccommunities_dev.Network.NewCommentAsyncTask;
+import ccomunities.alashka.com.ccommunities_dev.Network.NewPublicationAsyncTask;
 
 public class CommentActivity extends AppCompatActivity {
 
@@ -18,6 +28,8 @@ public class CommentActivity extends AppCompatActivity {
     private CommentAdapter commentAdapter;
     private Long publicationId;
     private Toolbar toolbar;
+
+    private EditText commentText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +40,7 @@ public class CommentActivity extends AppCompatActivity {
         commentAdapter = new CommentAdapter(this);
         listView = (ListView) findViewById(R.id.list_view_comment);
         listView.setAdapter(commentAdapter);
+        commentText = (EditText) findViewById(R.id.messageEditText);
 
 
         /*Async task*/
@@ -37,7 +50,7 @@ public class CommentActivity extends AppCompatActivity {
         initToolbar();
     }
 
-    public  CommentAdapter getCommentAdapter(){
+    public CommentAdapter getCommentAdapter() {
         return commentAdapter;
     }
 
@@ -61,5 +74,29 @@ public class CommentActivity extends AppCompatActivity {
                 }
 
         );
+    }
+
+    public void saveComment(View view) {
+        String content = commentText.getText().toString();
+
+        //Today's date
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String today = df.format(c.getTime());
+
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        Long userId = sharedPreferences.getLong("user_id", -1);
+
+        if (userId != -1 && publicationId != -1) {
+
+            Comment comment = new Comment(publicationId, today, today, userId, today, content);
+
+            NewCommentAsyncTask task = new NewCommentAsyncTask(this);
+            task.execute(comment);
+
+            finish();
+        } else {
+            Toast.makeText(this, R.string.comment_error, Toast.LENGTH_LONG).show();
+        }
     }
 }

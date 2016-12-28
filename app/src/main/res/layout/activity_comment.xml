@@ -68,6 +68,7 @@
             android:layout_gravity="center"
             android:background="@mipmap/icon_send"
             android:contentDescription="@string/icon_send_context"
+            android:onClick="saveComment"
              />
     </LinearLayout>
 
