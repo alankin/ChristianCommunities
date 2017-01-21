@@ -39,6 +39,9 @@ public interface CCommunitiesService {
     @POST("/publications")
     Call<Publication> createPublication(@Body Publication publication);
 
+    @POST("/users")
+    Call<User> createUser(@Body User user);
+
     @POST("/comments")
     Call<Comment> createComment(@Body Comment comment);
 

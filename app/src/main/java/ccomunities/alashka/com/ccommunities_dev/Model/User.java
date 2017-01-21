@@ -1,6 +1,7 @@
 package ccomunities.alashka.com.ccommunities_dev.Model;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
 
 import java.util.List;
 
@@ -18,11 +19,25 @@ public class User extends SugarRecord {
     String created_at;
     String updated_at;
     Community community;
+    @Ignore
+    Long community_id;
 
     public User() {
     }
 
     public User(String username, String name, String lastName, String email, String pathPhoto, Community community, String password, String created_at, String updated_at) {
+    }
+
+    public User(String username, String password, String name, String lastName, String email, String pathPhoto, String created_at, String updated_at, Long community_id) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.pathPhoto = pathPhoto;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.community_id = community_id;
     }
 
     public String getPassword() {

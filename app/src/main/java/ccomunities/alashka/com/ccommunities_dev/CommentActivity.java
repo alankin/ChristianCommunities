@@ -81,7 +81,7 @@ public class CommentActivity extends AppCompatActivity {
 
         //Today's date
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat df = new SimpleDateFormat(getString(R.string.date_format));
         String today = df.format(c.getTime());
 
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);

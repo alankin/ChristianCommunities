@@ -20,7 +20,6 @@ public class CommentClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Log.d("PublicationClick", "CLick on Publication ID: "+ publicationId);
         Intent intent = new Intent(v.getContext(), CommentActivity.class);
         intent.putExtra("publicationId", publicationId);
         v.getContext().startActivity(intent);

@@ -57,4 +57,8 @@
     <string name="underscore_like_comment">-</string>
     <string name="comment_error">There was a problem creating the comment</string>
     <string name="comment_success">Your comment was posted.</string>
+    <string name="date_format">yyyy-MM-dd</string>
+
+    <string name="user_created">Welcome.</string>
+    <string name="user_not_created">The user was not created, try again please.</string>
 </resources>

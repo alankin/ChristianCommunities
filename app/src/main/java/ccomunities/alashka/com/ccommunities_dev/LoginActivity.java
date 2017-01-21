@@ -36,8 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         user.setUsername(name);
         user.setPassword(pass);
 
-        Log.d("User", user.getUsername());
-
         LoginAsyncTask task = new LoginAsyncTask(this);
         loading = ProgressDialog.show(this, "", getResources().getString(R.string.loading_user), true);
         task.execute(user, loading);

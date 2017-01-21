@@ -107,7 +107,7 @@ public class NewPublicationActivity extends AppCompatActivity {
 
         //Today's date
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat df = new SimpleDateFormat(getString(R.string.date_format));
         String today = df.format(c.getTime());
 
         Publication publication = new Publication(title.getText().toString(), description.getText().toString(), date.getText().toString(), place.getText().toString(), user_id, today, today);
