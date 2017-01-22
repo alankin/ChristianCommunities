@@ -3,6 +3,10 @@ package ccomunities.alashka.com.ccommunities_dev.Network;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -11,7 +15,6 @@ import java.util.List;
 
 import ccomunities.alashka.com.ccommunities_dev.Fragment.PublicationFragment;
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
-import ccomunities.alashka.com.ccommunities_dev.Model.User;
 import ccomunities.alashka.com.ccommunities_dev.R;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -21,9 +24,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by ALANKIN on 21/10/16.
  */
-public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication>> {
+public class PublicationAsyncTask extends AsyncTask<Object, Void, List<Publication>> {
     private PublicationFragment fragment;
     private Long user_id;
+    private View view;
+    private Boolean showingData;
 
     public PublicationAsyncTask(PublicationFragment publicationFragment) {
         fragment = publicationFragment;
@@ -33,7 +38,7 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
     }
 
     @Override
-    protected List<Publication> doInBackground(Void... params) {
+    protected List<Publication> doInBackground(Object... params) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ccommunitiesservice-dev.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -41,6 +46,9 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
         CCommunitiesService service = retrofit.create(CCommunitiesService.class);
         //user_id es para filtrar se debe pasar como parametro
         Call<List<Publication>> call = service.getAllPublications();
+
+        view = (View) params[0];
+        showingData = (Boolean) params[1];
 
         try {
             Response<List<Publication>> response = call.execute();
@@ -54,6 +62,18 @@ public class PublicationAsyncTask extends AsyncTask<Void, Void, List<Publication
 
     @Override
     protected void onPostExecute(List<Publication> publications) {
+        if (!publications.isEmpty() && !showingData) {
+            ImageView image = (ImageView) view.findViewById(R.id.image_view_no_publications);
+            TextView text = (TextView) view.findViewById(R.id.text_view_no_publications);
+
+            RecyclerView list = (RecyclerView) view.findViewById(R.id.recycler_publication);
+
+            image.setVisibility(View.INVISIBLE);
+            text.setVisibility(View.INVISIBLE);
+
+            list.setVisibility(View.VISIBLE);
+        }
+
         if (!publications.isEmpty()) {
             fragment.getAdapter().clearData();
             fragment.getAdapter().addAll(publications);

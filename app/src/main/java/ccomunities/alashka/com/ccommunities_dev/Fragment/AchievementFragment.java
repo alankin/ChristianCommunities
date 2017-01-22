@@ -48,7 +48,7 @@ public class AchievementFragment extends Fragment {
         recycler.setAdapter(adapter);
 
         AchievementAsyncTask task = new AchievementAsyncTask(this);
-        task.execute();
+        task.execute(view);
 
         return  view;
 

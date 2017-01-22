@@ -61,4 +61,6 @@
 
     <string name="user_created">Welcome.</string>
     <string name="user_not_created">The user was not created, try again please.</string>
+    <string name="no_publications">There is no publications yet.</string>
+    <string name="no_achievements">You do not have any achievement yet.</string>
 </resources>

@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -43,14 +45,6 @@ public class PublicationFragment extends Fragment {
 
         List items = new ArrayList();
 
-        /*items.add(new Publication("Title 1", "This is a description description 1 description description description description description description description description description description description description description description description description end"));
-        items.add(new Publication("Title 2", "This is a description 2 description description description description description description "));
-        items.add(new Publication("Title 3", "This is a description 3 description description description description description description description description "));
-        items.add(new Publication("Title 4", "This is a  description 4 description description description description description description description description description description "));
-        items.add(new Publication("Title 5", "This is a  description 4 description description description description description description description description description description "));
-        items.add(new Publication("Title 6", "This is a  description 4 description description description description description description description description description description "));
-        items.add(new Publication("Title 7", "This is a  description 4 description description description description description description description description description description "));*/
-
         recycler = (RecyclerView) view.findViewById(R.id.recycler_publication);
         //setHasFixedSize() para optimizar las operaciones con los ítems
         recycler.setHasFixedSize(true);
@@ -61,10 +55,21 @@ public class PublicationFragment extends Fragment {
         adapter = new PublicationAdapter(getActivity());
         recycler.setAdapter(adapter);
 
-        loadPostFromDatabase();
+        Boolean showingData = loadPostFromDatabase();
+        if (showingData) {
+            ImageView image = (ImageView) view.findViewById(R.id.image_view_no_publications);
+            TextView text = (TextView) view.findViewById(R.id.text_view_no_publications);
+
+            RecyclerView list = (RecyclerView) view.findViewById(R.id.recycler_publication);
+
+            image.setVisibility(View.INVISIBLE);
+            text.setVisibility(View.INVISIBLE);
+
+            list.setVisibility(View.VISIBLE);
+        }
 
         PublicationAsyncTask task = new PublicationAsyncTask(this);
-        task.execute();
+        task.execute(view, showingData);
 
         return view;
     }
@@ -73,19 +78,16 @@ public class PublicationFragment extends Fragment {
         return adapter;
     }
 
-    private void loadPostFromDatabase() {
-        //System.out.println("Loading post from database");
+    private Boolean loadPostFromDatabase() {
         List<Publication> publications = Publication.listAll(Publication.class);
-        //System.out.println("+++++++++++++++++++++++");
-        for (Publication publication : publications) {
-            System.out.println("PUBLICATION:" + publication.toString());
-        }
+        Boolean res = false;
 
         if (!publications.isEmpty()) {
-            //System.out.println(posts.toString());
+            res = true;
             getAdapter().clearData();
             getAdapter().addAll(publications);
         }
+        return res;
     }
 
 
