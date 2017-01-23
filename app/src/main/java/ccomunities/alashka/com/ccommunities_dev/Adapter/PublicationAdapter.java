@@ -11,7 +11,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+import java.util.Random;
 
+import ccomunities.alashka.com.ccommunities_dev.Listener.CardDetailClickListener;
 import ccomunities.alashka.com.ccommunities_dev.Listener.CommentClickListener;
 import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.R;
@@ -35,6 +37,8 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         public CircleImageView profileImageView;
         private View viewAdapter;
 
+        private TextView seeMore;
+
         public PublicationViewHolder(View view) {
             super(view);
 
@@ -48,6 +52,17 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
             commentLayout = (LinearLayout) view.findViewById(R.id.id_comment_layout);
             profileImageView = (CircleImageView) view.findViewById(R.id.image_user);
             viewAdapter = view;
+            seeMore = (TextView) view.findViewById(R.id.label_see_more);
+
+            if (splittedContent()) {
+                seeMore.setVisibility(View.VISIBLE);
+            }
+        }
+
+        private Boolean splittedContent() {
+            //TODO: Nicaela deberias poder devolver aqui un boolean avisandome cuando el contenido esta dividido, para que aparezca el see more
+            Random random = new Random();
+            return random.nextBoolean();
         }
     }
 
@@ -78,6 +93,8 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         if (null != publications.get(position).getUser()) {
             Glide.with(holder.viewAdapter.getContext()).load(publications.get(position).getUser().getPathPhoto()).into(holder.profileImageView);
         }
+
+        holder.seeMore.setOnClickListener(new CardDetailClickListener(publications.get(position).getId()));
     }
 
     public void clearData() {

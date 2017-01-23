@@ -40,7 +40,8 @@
                 android:value="ccomunities.alashka.com.ccommunities_dev.MainActivity" />
         </activity>
         <activity android:name=".SignInActivity" />
-        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".CardDetailActivity"></activity>
     </application>
 
 </manifest>
