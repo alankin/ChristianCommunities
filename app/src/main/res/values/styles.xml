@@ -28,10 +28,17 @@
         <item name="android:textColor">@android:color/holo_orange_light</item>
     </style>
 
+    <style name="HintTextBgWhite" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/holo_orange_light</item>
+    </style>
+
     <!--Input field style-->
     <style name="MyEditText" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">#ffffff</item>
         <item name="colorControlActivated">@android:color/holo_orange_light</item>
     </style>
-
+    <style name="EditTextBgWhite" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@android:color/holo_orange_light</item>
+    </style>
 </resources>

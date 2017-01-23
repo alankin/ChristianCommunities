@@ -79,6 +79,8 @@
                     android:ems="10"
                     android:hint="@string/password_sign_in"
                     android:inputType="textPassword"
+                    android:textColorHint="#ffffff"
+                    android:textColor="@color/colorTextIcons"
                     android:singleLine="true"
                     android:theme="@style/MyEditText"/>
             </android.support.design.widget.TextInputLayout>
@@ -98,6 +100,8 @@
                     android:ems="10"
                     android:hint="@string/name_sign_in"
                     android:inputType="text"
+                    android:textColorHint="#ffffff"
+                    android:textColor="@color/colorTextIcons"
                     android:singleLine="true"
                     android:theme="@style/MyEditText"
                     />
@@ -117,7 +121,9 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/last_name_sign_in"
-                    android:inputType="textPassword"
+                    android:inputType="text"
+                    android:textColorHint="#ffffff"
+                    android:textColor="@color/colorTextIcons"
                     android:singleLine="true"
                     android:theme="@style/MyEditText"/>
             </android.support.design.widget.TextInputLayout>
@@ -137,6 +143,8 @@
                     android:ems="10"
                     android:hint="@string/email_sign_in"
                     android:inputType="textEmailAddress"
+                    android:textColorHint="#ffffff"
+                    android:textColor="@color/colorTextIcons"
                     android:singleLine="true"
                     android:theme="@style/MyEditText"/>
             </android.support.design.widget.TextInputLayout>

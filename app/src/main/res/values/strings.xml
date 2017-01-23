@@ -11,8 +11,7 @@
     <string name="icon_like">Icon Like</string>
     <string name="hint_tittle_npublication">Title</string>
     <string name="hint_description_npublication">Description</string>
-    <string name="button_cancel">cancelar</string>
-    <string name="button_save">Aceptar</string>
+    <string name="button_save">Create</string>
     <string name="hint_date">Date</string>
     <string name="icon_new_publication">Icon new publication</string>
     <string name="date_example">10-12-2016</string>
