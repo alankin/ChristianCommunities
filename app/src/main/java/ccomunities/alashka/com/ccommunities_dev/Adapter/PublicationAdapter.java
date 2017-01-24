@@ -30,6 +30,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     }
 
     public static class PublicationViewHolder extends RecyclerView.ViewHolder {
+        public TextView nameUser;
         public TextView tittle;
         public TextView description;
         public TextView date;
@@ -46,6 +47,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         }
 
         private void initialize(View view) {
+            nameUser = (TextView) view.findViewById(R.id.name_user_publication);
             tittle = (TextView) view.findViewById(R.id.title_publication);
             description = (TextView) view.findViewById(R.id.description_publication);
             date = (TextView) view.findViewById(R.id.date_publication);
@@ -85,6 +87,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
 
     @Override
     public void onBindViewHolder(PublicationViewHolder holder, int position) {
+        //holder.nameUser.setText(publications.get(position).getUser().getName());
         holder.tittle.setText(publications.get(position).getTitle());
         holder.description.setText(publications.get(position).getDescription());
         holder.date.setText(publications.get(position).getDate());

@@ -30,11 +30,13 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
     public static  class AchievementViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
         public TextView description;
+        public TextView dateCreated;
 
         public AchievementViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.name_achievement);
             description = (TextView) view.findViewById(R.id.description_achievement);
+            dateCreated = (TextView) view.findViewById(R.id.date_achievement);
         }
     }
 
@@ -59,6 +61,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
     public void onBindViewHolder(AchievementViewHolder holder, int position) {
         holder.name.setText(userAchievements.get(position).getName());
         holder.description.setText(userAchievements.get(position).getDescription());
+        holder.dateCreated.setText(userAchievements.get(position).getCreatedAt());
 
     }
 

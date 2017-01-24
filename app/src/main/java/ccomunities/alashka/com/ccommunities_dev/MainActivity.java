@@ -3,7 +3,6 @@ package ccomunities.alashka.com.ccommunities_dev;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -29,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.mipmap.tab_publication,
-            R.mipmap.tab_user
+            R.mipmap.icon_tab_publication,
+            R.mipmap.icon_tab_achievement
     };
 
     private FloatingActionButton fab;

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="230dp"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="6dp"
     card_view:cardUseCompatPadding="true">
@@ -11,24 +11,35 @@
     <RelativeLayout
         android:id="@+id/card_container"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image_user"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:contentDescription="@string/image_perfil_description"
             app:civ_border_color="#c0b3bd"
             app:civ_border_width="2dp" />
 
-
+        <TextView
+            android:id="@+id/name_user_publication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/image_user"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:text="Nicaela Onofre Rocha"/>
         <TextView
             android:id="@+id/title_publication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/name_user_publication"
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/image_user"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -50,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/image_user"
             android:layout_below="@+id/image_user"
+            android:layout_marginTop="10dp"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <RelativeLayout

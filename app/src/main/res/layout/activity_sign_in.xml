@@ -32,8 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="32dp"
-        android:paddingRight="32dp"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:orientation="vertical">
 
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/photo_default"
+                android:src="@drawable/icon_default_photo"
                 android:adjustViewBounds="true"
                 android:maxWidth="150dp"
                 android:maxHeight="80dp"
@@ -72,7 +72,7 @@
             android:id="@+id/label_username_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+
             android:textColorHint="#ffffff"
             app:hintTextAppearance="@style/MyHintText">
 
@@ -93,7 +93,7 @@
             android:id="@+id/label_password_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+
             android:textColorHint="#ffffff"
             app:hintTextAppearance="@style/MyHintText">
 
@@ -114,7 +114,7 @@
             android:id="@+id/label_name_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+
             android:textColorHint="#ffffff"
             app:hintTextAppearance="@style/MyHintText">
 
@@ -136,7 +136,7 @@
             android:id="@+id/label_last_name_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+
             android:textColorHint="#ffffff"
             app:hintTextAppearance="@style/MyHintText">
 
@@ -157,7 +157,7 @@
             android:id="@+id/label_email_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+
             android:textColorHint="#ffffff"
             app:hintTextAppearance="@style/MyHintText">
 
@@ -175,14 +175,14 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="230dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/b_button"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rounded"
             android:onClick="createUser"
             android:text="@string/text_sign_in"
-            android:textColor="#b399ad"
+            android:textColor="#ffffff"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textAlignment="center"
