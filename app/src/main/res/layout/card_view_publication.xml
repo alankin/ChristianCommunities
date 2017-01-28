@@ -30,11 +30,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
+            android:paddingTop="10dp"
             android:layout_toEndOf="@+id/image_user"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:text="Nicaela Onofre Rocha"/>
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/title_publication"
             android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/image_user"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorBlack"
             android:textStyle="bold" />
 
         <TextView
@@ -52,7 +52,6 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/title_publication"
             android:layout_below="@+id/title_publication"
-
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -62,6 +61,8 @@
             android:layout_alignStart="@+id/image_user"
             android:layout_below="@+id/image_user"
             android:layout_marginTop="10dp"
+            android:maxLength="103"
+            android:ellipsize="end"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <RelativeLayout

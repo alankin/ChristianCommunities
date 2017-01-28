@@ -3,12 +3,13 @@ package ccomunities.alashka.com.ccommunities_dev.Model;
 import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by ALANKIN on 10/10/16.
  */
-public class User extends SugarRecord {
+public class User extends SugarRecord implements Serializable {
 
     String username;
     String password;

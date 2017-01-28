@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#684765</color>
     <color name="colorAccent">#684765</color>
     <color name="colorPrimaryLight">#FFFFFF</color>
+    <color name="colorBlack">#1C2833</color>
 
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorTextIcons">#FFFFFF</color>

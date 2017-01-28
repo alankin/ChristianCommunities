@@ -19,6 +19,7 @@ import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 import ccomunities.alashka.com.ccommunities_dev.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
 /**
  * Created by nicaela on 19/10/16.
  */
@@ -36,9 +37,11 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         public TextView date;
         public LinearLayout commentLayout;
         public CircleImageView profileImageView;
+        public Boolean isVisibleSeeMore;
         private View viewAdapter;
 
         private TextView seeMore;
+
 
         public PublicationViewHolder(View view) {
             super(view);
@@ -55,6 +58,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
             profileImageView = (CircleImageView) view.findViewById(R.id.image_user);
             viewAdapter = view;
             seeMore = (TextView) view.findViewById(R.id.label_see_more);
+            isVisibleSeeMore = false;
 
             if (splittedContent()) {
                 seeMore.setVisibility(View.VISIBLE);
@@ -95,9 +99,10 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         //holder.profileImageView = Glide.with.....load(...);
         if (null != publications.get(position).getUser()) {
             Glide.with(holder.viewAdapter.getContext()).load(publications.get(position).getUser().getPathPhoto()).into(holder.profileImageView);
+            holder.nameUser.setText(publications.get(position).getUser().getName() + " " + publications.get(position).getUser().getLastName());
         }
 
-        holder.seeMore.setOnClickListener(new CardDetailClickListener(publications.get(position).getId()));
+        holder.seeMore.setOnClickListener(new CardDetailClickListener(publications.get(position)));
     }
 
     public void clearData() {
@@ -118,5 +123,6 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
             this.notifyItemInserted(this.publications.size());
         }
     }
+
 
 }

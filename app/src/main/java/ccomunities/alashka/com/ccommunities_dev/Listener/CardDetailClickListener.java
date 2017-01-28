@@ -5,6 +5,7 @@ import android.view.View;
 
 import ccomunities.alashka.com.ccommunities_dev.CardDetailActivity;
 import ccomunities.alashka.com.ccommunities_dev.CommentActivity;
+import ccomunities.alashka.com.ccommunities_dev.Model.Publication;
 
 /**
  * Created by ALANKIN on 17/12/16.
@@ -12,16 +13,16 @@ import ccomunities.alashka.com.ccommunities_dev.CommentActivity;
 
 public class CardDetailClickListener implements View.OnClickListener {
 
-    Long publicationId;
+    Publication publication;
 
-    public CardDetailClickListener(Long publicationId) {
-        this.publicationId = publicationId;
+    public CardDetailClickListener(Publication publication) {
+        this.publication = publication;
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(v.getContext(), CardDetailActivity.class);
-        intent.putExtra("publicationId", publicationId);
+        intent.putExtra("publication", publication);
         v.getContext().startActivity(intent);
     }
 }
