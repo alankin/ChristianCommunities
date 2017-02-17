@@ -60,9 +60,9 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
             seeMore = (TextView) view.findViewById(R.id.label_see_more);
             isVisibleSeeMore = false;
 
-            if (splittedContent()) {
+            /*if (isVisibleSeeMore) {
                 seeMore.setVisibility(View.VISIBLE);
-            }
+            }*/
         }
 
         private Boolean splittedContent() {
@@ -93,7 +93,7 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
     public void onBindViewHolder(PublicationViewHolder holder, int position) {
         //holder.nameUser.setText(publications.get(position).getUser().getName());
         holder.tittle.setText(publications.get(position).getTitle());
-        holder.description.setText(publications.get(position).getDescription());
+
         holder.date.setText(publications.get(position).getDate());
         holder.commentLayout.setOnClickListener(new CommentClickListener(publications.get(position).getId()));
         //holder.profileImageView = Glide.with.....load(...);
@@ -103,6 +103,13 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationAdapter.
         }
 
         holder.seeMore.setOnClickListener(new CardDetailClickListener(publications.get(position)));
+        holder.isVisibleSeeMore = publications.get(position).getDescription().length() > 100 ;
+        if (holder.isVisibleSeeMore) {
+            holder.seeMore.setVisibility(View.VISIBLE);
+            holder.description.setText(publications.get(position).getDescription().substring(0, 100) + "...");
+        }else{
+            holder.description.setText(publications.get(position).getDescription());
+        }
     }
 
     public void clearData() {

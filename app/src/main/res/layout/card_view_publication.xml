@@ -61,7 +61,7 @@
             android:layout_alignStart="@+id/image_user"
             android:layout_below="@+id/image_user"
             android:layout_marginTop="10dp"
-            android:maxLength="103"
+            android:maxLength="104"
             android:ellipsize="end"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
